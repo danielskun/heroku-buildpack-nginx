@@ -33,6 +33,7 @@ http {
 	pagespeed FileCachePath /app/pagespeed/cache/ngx_pagespeed_cache;
 	
 	pagespeed Domain *.<%= ENV['PAGESPEED_DOMAIN_TLD'] %>;
+	pagespeed Domain *.amazonaws.com;
 
 	upstream app_server {
 		server unix:/tmp/nginx.socket fail_timeout=0;
