@@ -6,17 +6,17 @@ set -e
 
 # Allow versions to be specificied by the requesting application
 
-[ -z "${NGINX_VERSION}" ] && NGINX_VERSION=1.6.0
-[ -z "${PCRE_VERSION}" ] && PCRE_VERSION=8.35
-[ -z "${PAGESPEED_VERSION}" ] && PAGESPEED_VERSION=1.8.31.3
+[ -z "${NGINX_VERSION}" ] && NGINX_VERSION=1.10.0
+[ -z "${PCRE_VERSION}" ] && PCRE_VERSION=8.38
+[ -z "${PAGESPEED_VERSION}" ] && PAGESPEED_VERSION=1.11.33.1
 
 MOD_NGINX_PAGESPEED_VERSION=${PAGESPEED_VERSION}-beta
 MOD_NGINX_PAGESPEED_DIRECTORY=ngx_pagespeed-release-${MOD_NGINX_PAGESPEED_VERSION}
 
 
 nginx_tarball_url=http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz
-pcre_tarball_url=http://garr.dl.sourceforge.net/project/pcre/pcre/${PCRE_VERSION}/pcre-${PCRE_VERSION}.tar.bz2
-ps_ngx_tarball_url=https://github.com/pagespeed/ngx_pagespeed/archive/release-${MOD_NGINX_PAGESPEED_VERSION}.zip
+pcre_tarball_url=http://downloads.sourceforge.net/project/pcre/pcre/${PCRE_VERSION}/pcre-${PCRE_VERSION}.tar.bz2?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fpcre%2Ffiles%2Fpcre%2F8.38%2F&ts=1462963801&use_mirror=vorboss
+ps_ngx_tarball_url=https://github.com/pagespeed/ngx_pagespeed/archive/v${MOD_NGINX_PAGESPEED_VERSION}-beta.zip
 ps_tarball_url=https://dl.google.com/dl/page-speed/psol/${PAGESPEED_VERSION}.tar.gz
 httpsubs_git_url=git://github.com/yaoweibin/ngx_http_substitutions_filter_module.git
 
