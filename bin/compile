@@ -16,7 +16,7 @@ MOD_NGINX_PAGESPEED_DIRECTORY=ngx_pagespeed-${MOD_NGINX_PAGESPEED_VERSION}
 
 nginx_tarball_url=http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz
 pcre_tarball_url=http://downloads.sourceforge.net/project/pcre/pcre/${PCRE_VERSION}/pcre-${PCRE_VERSION}.tar.bz2?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fpcre%2Ffiles%2Fpcre%2F8.38%2F&ts=1462963801&use_mirror=vorboss
-ps_ngx_tarball_url=https://github.com/pagespeed/ngx_pagespeed/archive/v${MOD_NGINX_PAGESPEED_VERSION}-beta.zip
+ps_ngx_tarball_url=https://github.com/pagespeed/ngx_pagespeed/archive/v${MOD_NGINX_PAGESPEED_VERSION}.zip
 ps_tarball_url=https://dl.google.com/dl/page-speed/psol/${PAGESPEED_VERSION}.tar.gz
 httpsubs_git_url=git://github.com/yaoweibin/ngx_http_substitutions_filter_module.git
 
