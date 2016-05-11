@@ -34,6 +34,8 @@ http {
 	
 	pagespeed Domain *.<%= ENV['PAGESPEED_DOMAIN_TLD'] %>;
 	pagespeed Domain *.amazonaws.com;
+	
+	pagespeed EnableFilters prioritize_critical_css;
 
 	upstream app_server {
 		server unix:/tmp/nginx.socket fail_timeout=0;
