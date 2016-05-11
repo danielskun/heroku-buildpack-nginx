@@ -105,6 +105,9 @@ cp -R ${ROOT_DIR}/config ${BUILD_DIR}/config
 
 cp ${ROOT_DIR}/scripts/start-nginx.sh ${BUILD_DIR}
 
+cp ${ROOT_DIR}/bin/start-nginx ${BUILD_DIR}/bin/
+echo '-----> nginx-buildpack: Added start-nginx to app/bin'
+
 chmod +x ${BUILD_DIR}/*.sh
 
 # Add nginx to the PATH
