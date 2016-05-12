@@ -36,6 +36,7 @@ http {
 	pagespeed Domain *.amazonaws.com;
 	
 	pagespeed EnableFilters prioritize_critical_css;
+	pagespeed EnableFilters insert_dns_prefetch;
 
 	upstream app_server {
 		server unix:/tmp/nginx.socket fail_timeout=0;
