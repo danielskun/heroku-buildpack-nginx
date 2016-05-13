@@ -43,6 +43,15 @@ http {
 	upstream app_server {
 		server unix:/tmp/nginx.socket fail_timeout=0;
  	}
+ 	
+ 	server {
+    		listen       80;
+    		server_name  wehike.ch;
+    		# http://stackoverflow.com/questions/7947030/nginx-no-www-to-www-and-www-to-no-www
+    		# $scheme will get the http protocol
+        	# and 301 is best practice for tablet, phone, desktop and seo
+        	return 301 $scheme://www.wehike.ch$request_uri;
+	}
 
 	server {
 		listen <%= ENV["PORT"] %>;
