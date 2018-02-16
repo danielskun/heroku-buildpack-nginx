@@ -34,7 +34,10 @@ http {
 	# Needs to exist and be writable by nginx.  Use tmpfs for best performance.
 	pagespeed FileCachePath /app/pagespeed/cache/ngx_pagespeed_cache;
 	
-	pagespeed Domain *.<%= ENV['PAGESPEED_DOMAIN_TLD'] %>;
+	pagespeed Domain *.wegaw.ch;
+	pagespeed Domain *.wegaw.com;
+	pagespeed Domain *.wehike.ch;
+	pagespeed Domain *.wehike.earth;
 	pagespeed Domain *.amazonaws.com;
 	
 	pagespeed EnableFilters prioritize_critical_css;
