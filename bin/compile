@@ -83,7 +83,7 @@ then
             --add-module=../${MOD_NGINX_PAGESPEED_DIRECTORY}
 
         echo "Building NGINX with Google PageSpeed module"
-        makel
+        make
 
         # Be sure to clean any existing NGINX distribution
         rm -rf ${NGINX_DIST_DIR}
