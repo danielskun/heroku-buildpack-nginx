@@ -62,7 +62,7 @@ then
 
         echo "Downloading ${ps_ngx_tarball_url}" # expanded into a new directory (MOD_NGINX_PAGESPEED_DIRECTORY)
         curl --silent -L ${ps_ngx_tarball_url} > ps_ngx.zip
-        jar xf ps_ngx.zip
+        unzip ps_ngx.zip
 
         (
             echo "Downloading ${ps_tarball_url}" # expanded into a new directory (psol)
