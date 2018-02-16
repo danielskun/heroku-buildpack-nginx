@@ -80,7 +80,7 @@ then
             --with-pcre=pcre-${PCRE_VERSION} \
             --prefix=${NGINX_DIST_DIR} \
             --with-http_ssl_module \
-            --add-module=../${MOD_NGINX_PAGESPEED_DIRECTORY} > /dev/null
+            --add-module=../${MOD_NGINX_PAGESPEED_DIRECTORY}
 
         echo "Building NGINX with Google PageSpeed module"
         make > /dev/null
