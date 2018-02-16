@@ -36,8 +36,6 @@ http {
 	
 	pagespeed Domain *.wegaw.ch;
 	pagespeed Domain *.wegaw.com;
-	pagespeed Domain *.wehike.ch;
-	pagespeed Domain *.wehike.earth;
 	pagespeed Domain *.amazonaws.com;
 	
 	pagespeed EnableFilters prioritize_critical_css;
@@ -50,6 +48,20 @@ http {
 
 	server {
 		listen <%= ENV["PORT"] %>;
+		server_name .wehike.ch;
+		keepalive_timeout 5;
+    		rewrite ^/(.*)$ https://www.wegaw.ch/$1 permanent;
+	}
+
+	server {
+		listen <%= ENV["PORT"] %>;
+		server_name .wehike.earth;
+		keepalive_timeout 5;
+    		rewrite ^/(.*)$ https://www.wegaw.com/$1 permanent;
+	}
+
+	server{ 
+    		listen <%= ENV["PORT"] %>;
 		server_name _;
 		keepalive_timeout 5;
 
