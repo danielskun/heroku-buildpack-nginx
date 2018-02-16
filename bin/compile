@@ -67,7 +67,7 @@ then
         (
             cd ${MOD_NGINX_PAGESPEED_DIRECTORY}
             ps_tarball_url=$(scripts/format_binary_url.sh PSOL_BINARY_URL)
-            echo $psol_url 
+            echo $ps_tarball_url 
             echo "Downloading ${ps_tarball_url}" # expanded into a new directory (psol)
             curl --silent -L ${ps_tarball_url} | tar xz
         )
