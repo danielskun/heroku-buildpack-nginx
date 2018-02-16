@@ -48,14 +48,14 @@ http {
 
 	server {
 		listen <%= ENV["PORT"] %>;
-		server_name .wehike.ch;
+		server_name wehike.ch www.wehike.ch *.wehike.ch;
 		keepalive_timeout 5;
     		rewrite ^/(.*)$ http://www.wegaw.ch/$1 permanent;
 	}
 
 	server {
 		listen <%= ENV["PORT"] %>;
-		server_name .wehike.earth;
+		server_name wehike.earth www.wehike.earth *.wehike.earth;
 		keepalive_timeout 5;
     		rewrite ^/(.*)$ http://www.wegaw.com/$1 permanent;
 	}
