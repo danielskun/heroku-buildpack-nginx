@@ -29,11 +29,16 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
+echo "BUILD_DIR = " ${BUILD_DIR}
+echo "CACHE_DIR = " ${CACHE_DIR}
+echo "ENV_DIR = " ${ENV_DIR}
+
 LOGGER_FLAGS=""
 
 #create the dirs if needed
 mkdir -p ${CACHE_DIR}
 mkdir -p ${BUILD_DIR}
+mkdir -p ${BUILD_DIR}/bin
 
 NGINX_CACHE_DIR=${CACHE_DIR}/nginx-${NGINX_VERSION}
 
@@ -97,10 +102,13 @@ fi
 # Copy the built nginx distribution and other needed artefacts
 
 cp -R ${NGINX_DIST_DIR} ${BUILD_DIR}
+echo "NGINX copied to BUILD_DIR"
 
 cp -R ${ROOT_DIR}/config ${BUILD_DIR}/config
+echo "CONFIG copied to BUILD_DIR/config"
 
 cp ${ROOT_DIR}/scripts/start-nginx.sh ${BUILD_DIR}
+echo "start-nginx.sh copied to BUILD_DIR"
 
 cp ${ROOT_DIR}/bin/start-nginx ${BUILD_DIR}/bin/
 echo '-----> nginx-buildpack: Added start-nginx to app/bin'
