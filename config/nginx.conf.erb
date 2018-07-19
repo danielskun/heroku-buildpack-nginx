@@ -34,6 +34,9 @@ http {
 	# Needs to exist and be writable by nginx.  Use tmpfs for best performance.
 	pagespeed FileCachePath /app/pagespeed/cache/ngx_pagespeed_cache;
 	
+	pagespeed Domain *.defrost.ch;
+	pagespeed Domain *.wehike.ch;
+	pagespeed Domain *.wehike.earth;
 	pagespeed Domain *.wegaw.ch;
 	pagespeed Domain *.wegaw.com;
 	pagespeed Domain *.amazonaws.com;
@@ -44,25 +47,10 @@ http {
 	upstream app_server {
 		server unix:/tmp/nginx.socket fail_timeout=0;
  	}
- 	
-
-	server {
-		listen <%= ENV["PORT"] %>;
-		server_name wehike.ch www.wehike.ch *.wehike.ch;
-		keepalive_timeout 5;
-    		rewrite ^/(.*)$ https://www.wegaw.ch/$1 permanent;
-	}
-
-	server {
-		listen <%= ENV["PORT"] %>;
-		server_name wehike.earth www.wehike.earth *.wehike.earth;
-		keepalive_timeout 5;
-    		rewrite ^/(.*)$ https://www.wegaw.com/$1 permanent;
-	}
 
 	server{ 
     		listen <%= ENV["PORT"] %>;
-		server_name wegaw.com www.wegaw.com *.wegaw.com wegaw.ch www.wegaw.ch *.wegaw.ch defrost.ch www.defrost.ch *.defrost.ch wh-staging.herokuapp.com defrost-staging.herokuapp.com defrost-landing-st.herokuapp.com defrost-landing.herokuapp.com *.amazonaws.com;
+		server_name wehike.ch www.wehike.ch *.wehike.ch wehike.earth www.wehike.earth *.wehike.earth wegaw.com www.wegaw.com *.wegaw.com wegaw.ch www.wegaw.ch *.wegaw.ch defrost.ch www.defrost.ch *.defrost.ch wh-staging.herokuapp.com defrost-staging.herokuapp.com defrost-landing-st.herokuapp.com defrost-landing.herokuapp.com *.amazonaws.com;
 		keepalive_timeout 5;
 
 		location / {
